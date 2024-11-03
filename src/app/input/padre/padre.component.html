@@ -1,0 +1,3 @@
+<input type="text" (input)="escribirMensaje($event)"> <!-- Igualo el input al evento escribirMensaje-->
+<p> Mensaje desde el componente padre: {{mensajePadre}} </p>
+<app-hijo [mensaje]="mensajePadre"> </app-hijo> <!-- Igualo el mensaje del hijo al del padre-->

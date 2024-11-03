@@ -1,0 +1,8 @@
+<app-add-tarea (emitirTarea)="agregarLista($event)"> </app-add-tarea> 
+<section>
+    <ul>
+        @for (item of listaTarea; track $index) {
+            <li>Nombre: {{item.nombre}} Id: {{item.id}} </li>
+        }
+    </ul>
+</section>

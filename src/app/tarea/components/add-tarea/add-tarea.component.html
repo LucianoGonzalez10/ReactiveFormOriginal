@@ -1,0 +1,32 @@
+<section>
+    <fieldset>
+        <form [formGroup]="formulario" (ngSubmit)="addTarea()">
+            <legend> Alta Tarea </legend>
+
+            <label for=""> Tarea: </label>
+            <input type="text" formControlName="nombre"> 
+            @if (formulario.controls['nombre'].getError('required') && formulario.controls['nombre'].touched) {
+                <div class="error">
+                    Campo requerido
+                </div>
+            }
+
+            @if (formulario.controls['nombre'].getError('minlength') && formulario.controls['nombre'].touched) {
+                <div class="error">
+                    Tiene que tener un minimo de 3 letras.
+                </div>
+            }
+
+
+            <br>
+            <label for=""> Id: </label>
+            <input type="number" formControlName="id">
+            @if (formulario.controls['id'].getError('required')) {
+                <div class="error">
+                    Campo requerido
+                </div>
+            } 
+            <button> Add </button>
+        </form>
+    </fieldset>
+</section>
